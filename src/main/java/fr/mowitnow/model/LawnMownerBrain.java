@@ -1,6 +1,6 @@
 package fr.mowitnow.model;
 
-import fr.mowitnow.model.actions.ActionHandler;
+import fr.mowitnow.brain.actions.ActionHandler;
 import fr.mowitnow.util.ActionFactory;
 import lombok.Getter;
 import lombok.Setter;

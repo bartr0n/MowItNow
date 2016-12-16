@@ -1,16 +1,16 @@
-package fr.mowitnow.actions;
+package fr.mowitnow.brain.actions;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import fr.mowitnow.brain.actions.ActionHandler;
+import fr.mowitnow.brain.actions.Forward;
+import fr.mowitnow.brain.actions.TurnLeft;
+import fr.mowitnow.brain.actions.TurnRight;
 import fr.mowitnow.model.LawnMownerPosition;
 import fr.mowitnow.model.Orientation;
-import fr.mowitnow.model.actions.ActionHandler;
-import fr.mowitnow.model.actions.Forward;
-import fr.mowitnow.model.actions.TurnLeft;
-import fr.mowitnow.model.actions.TurnRight;
 
 public class MoveTest {
 

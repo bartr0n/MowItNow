@@ -1,4 +1,4 @@
-package fr.mowitnow.model.actions;
+package fr.mowitnow.brain.actions;
 
 import fr.mowitnow.model.LawnMownerPosition;
 
