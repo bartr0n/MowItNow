@@ -5,13 +5,17 @@ import fr.mowitnow.util.ActionFactory;
 import lombok.Getter;
 import lombok.Setter;
 
+
 public class LawnMownerBrain {
 
 	@Getter
+	@Setter
 	private LawnMownerPosition currentPosition;
 
 	@Setter
 	private Lawn lawn;
+	
+	
 
     public void move(Action action) {
 

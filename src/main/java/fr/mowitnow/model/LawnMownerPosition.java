@@ -1,15 +1,16 @@
 package fr.mowitnow.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
+@AllArgsConstructor
 public class LawnMownerPosition {
 
-    private Position position;
-    private Orientation orientation;
+	private Position position;
+	private Orientation orientation;
 
 	public LawnMownerPosition() {
 		this.position = new Position(0, 0);

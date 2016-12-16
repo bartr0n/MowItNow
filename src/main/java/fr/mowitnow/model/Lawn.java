@@ -1,11 +1,16 @@
 package fr.mowitnow.model;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public class Lawn {
 
-    private Position boundaries;
+	private Position boundaries;
 
-    public boolean isOutOfBoundaries(Position position) {
+	public boolean isOutOfBoundaries(Position position) {
 
-        return position.getX() > boundaries.getX() || position.getY() > boundaries.getY();
-    }
+		// TODO classe Range?
+		return position.getX() < 0 || position.getX() > boundaries.getX() || position.getY() < 0
+				|| position.getY() > boundaries.getY();
+	}
 }
