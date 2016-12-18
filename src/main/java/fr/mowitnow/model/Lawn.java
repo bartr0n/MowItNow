@@ -1,16 +1,23 @@
 package fr.mowitnow.model;
 
-import lombok.AllArgsConstructor;
+import javax.validation.constraints.Min;
 
-@AllArgsConstructor
+import com.google.common.collect.Range;
+
 public class Lawn {
 
-	private Position boundaries;
+	private final static Integer ORIGIN = 0;
+
+	private Range<Integer> xRange;
+	private Range<Integer> yRange;
+
+	public Lawn(@Min(0) Integer x, @Min(0) Integer y) {
+		xRange = Range.closed(ORIGIN, x);
+		yRange = Range.closed(ORIGIN, y);
+	}
 
 	public boolean isOutOfBoundaries(Position position) {
 
-		// TODO classe Range?
-		return position.getX() < 0 || position.getX() > boundaries.getX() || position.getY() < 0
-				|| position.getY() > boundaries.getY();
+		return !xRange.contains(position.getX()) || !yRange.contains(position.getY());
 	}
 }

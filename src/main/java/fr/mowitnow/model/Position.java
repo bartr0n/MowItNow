@@ -11,6 +11,7 @@ import lombok.Setter;
 @Getter
 public class Position {
 
-    private Integer x;
-    private Integer y;
+	private Integer x;
+	private Integer y;
+
 }

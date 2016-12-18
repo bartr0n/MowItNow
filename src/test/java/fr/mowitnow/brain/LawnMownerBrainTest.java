@@ -20,7 +20,7 @@ public class LawnMownerBrainTest {
 	@Before
 	public void setUp() {
 		brain = new LawnMownerBrain();
-		brain.setLawn(new Lawn(new Position(3, 3)));
+		brain.setLawn(new Lawn(3, 3));
 		brain.setCurrentPosition(new LawnMownerPosition());
 	}
 

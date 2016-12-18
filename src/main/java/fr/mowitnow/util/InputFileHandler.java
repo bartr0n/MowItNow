@@ -7,8 +7,8 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import fr.mowitnow.model.Action;
 import fr.mowitnow.model.Lawn;
+import fr.mowitnow.model.LawnMower;
 import fr.mowitnow.model.LawnMownerBrain;
 import fr.mowitnow.model.LawnMownerPosition;
 import fr.mowitnow.model.Orientation;
@@ -26,11 +26,13 @@ public class InputFileHandler {
 
 			// Lecture des dimensions de la pelouse
 			String[] header = reader.readLine().split(PATTERN);
-			Lawn lawn = new Lawn(new Position(Integer.valueOf(header[0]), Integer.valueOf(header[0])));
+			Lawn lawn = new Lawn(Integer.valueOf(header[0]), Integer.valueOf(header[1]));
 
-			// Initialisation du brain
+			// Initialisation du brainx
 			LawnMownerBrain lawnMownerBrain = new LawnMownerBrain();
 			lawnMownerBrain.setLawn(lawn);
+
+			LawnMower lawnMowner = new LawnMower(lawnMownerBrain);
 
 			// LoawnMowner configuration
 			String line = null;
@@ -43,15 +45,12 @@ public class InputFileHandler {
 				LawnMownerPosition initialPosition = new LawnMownerPosition(position,
 						Orientation.valueOf(initialPositionElements[2]));
 
-				lawnMownerBrain.setCurrentPosition(initialPosition);
-
-				// Commandes
-				String commands = reader.readLine();
+				lawnMowner.init(initialPosition);
 
 				// Execution des instructions
-				commands.chars().forEach(x -> lawnMownerBrain.move(Action.valueOf(new Character((char) x).toString())));
+				LawnMownerPosition finalPosition = lawnMowner.execute(reader.readLine());
 
-				System.out.println(lawnMownerBrain.getCurrentPosition());
+				System.out.println(finalPosition);
 			}
 
 			System.out.println("Done!");
@@ -61,4 +60,5 @@ public class InputFileHandler {
 			ex.printStackTrace();
 		}
 	}
+
 }
