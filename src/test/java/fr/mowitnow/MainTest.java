@@ -1,7 +1,5 @@
 package fr.mowitnow;
 
-import static org.junit.Assert.fail;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,11 +20,5 @@ public class MainTest {
 	@Test
 	public void testValidFile() {
 		fileHandler.handleInputFile("src/test/resources/inputFile1.txt");
-	}
-
-	@Test
-	public void testWrongLawnFile() {
-		fileHandler.handleInputFile("src/test/resources/inputFile2.txt");
-		fail("Not exception throwed");
 	}
 }

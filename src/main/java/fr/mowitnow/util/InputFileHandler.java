@@ -9,10 +9,10 @@ import java.nio.file.Path;
 
 import fr.mowitnow.model.Lawn;
 import fr.mowitnow.model.LawnMower;
-import fr.mowitnow.model.LawnMownerBrain;
-import fr.mowitnow.model.LawnMownerPosition;
+import fr.mowitnow.model.LawnMowerBrain;
+import fr.mowitnow.model.LawnMowerPosition;
 import fr.mowitnow.model.Orientation;
-import fr.mowitnow.model.Position;
+import fr.mowitnow.model.Coordinates;
 
 public class InputFileHandler {
 
@@ -29,7 +29,7 @@ public class InputFileHandler {
 			Lawn lawn = new Lawn(Integer.valueOf(header[0]), Integer.valueOf(header[1]));
 
 			// Initialisation du brainx
-			LawnMownerBrain lawnMownerBrain = new LawnMownerBrain();
+			LawnMowerBrain lawnMownerBrain = new LawnMowerBrain();
 			lawnMownerBrain.setLawn(lawn);
 
 			LawnMower lawnMowner = new LawnMower(lawnMownerBrain);
@@ -40,15 +40,15 @@ public class InputFileHandler {
 
 				// Position initiale
 				String[] initialPositionElements = line.split(PATTERN);
-				Position position = new Position(Integer.valueOf(initialPositionElements[0]),
+				Coordinates position = new Coordinates(Integer.valueOf(initialPositionElements[0]),
 						Integer.valueOf(initialPositionElements[1]));
-				LawnMownerPosition initialPosition = new LawnMownerPosition(position,
+				LawnMowerPosition initialPosition = new LawnMowerPosition(position,
 						Orientation.valueOf(initialPositionElements[2]));
 
 				lawnMowner.init(initialPosition);
 
 				// Execution des instructions
-				LawnMownerPosition finalPosition = lawnMowner.execute(reader.readLine());
+				LawnMowerPosition finalPosition = lawnMowner.execute(reader.readLine());
 
 				System.out.println(finalPosition);
 			}

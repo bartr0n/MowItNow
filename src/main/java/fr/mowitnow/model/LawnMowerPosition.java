@@ -7,19 +7,19 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-public class LawnMownerPosition {
+public class LawnMowerPosition {
 
-	private Position position;
+	private Coordinates position;
 	private Orientation orientation;
 
-	public LawnMownerPosition() {
-		this.position = new Position(0, 0);
+	public LawnMowerPosition() {
+		this.position = new Coordinates(0, 0);
 		this.orientation = Orientation.N;
 	}
 
-	public LawnMownerPosition(LawnMownerPosition source) {
+	public LawnMowerPosition(LawnMowerPosition source) {
 
-		this.position = new Position(source.getPosition().getX(), source.getPosition().getY());
+		this.position = new Coordinates(source.getPosition().getX(), source.getPosition().getY());
 		this.orientation = source.orientation;
 	}
 

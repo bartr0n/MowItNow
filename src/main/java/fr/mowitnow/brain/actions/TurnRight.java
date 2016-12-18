@@ -4,7 +4,7 @@ import fr.mowitnow.model.*;
 
 public class TurnRight implements ActionHandler {
 
-    public void execute(LawnMownerPosition position) {
+    public void execute(LawnMowerPosition position) {
         position.setOrientation(position.getOrientation().next());
     }
 }

@@ -16,7 +16,7 @@ public class Lawn {
 		yRange = Range.closed(ORIGIN, y);
 	}
 
-	public boolean isOutOfBoundaries(Position position) {
+	public boolean isOutOfBoundaries(Coordinates position) {
 
 		return !xRange.contains(position.getX()) || !yRange.contains(position.getY());
 	}

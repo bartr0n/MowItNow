@@ -5,11 +5,11 @@ import fr.mowitnow.util.ActionFactory;
 import lombok.Getter;
 import lombok.Setter;
 
-public class LawnMownerBrain {
+public class LawnMowerBrain {
 
 	@Getter
 	@Setter
-	private LawnMownerPosition currentPosition;
+	private LawnMowerPosition currentPosition;
 
 	@Setter
 	private Lawn lawn;
@@ -17,7 +17,7 @@ public class LawnMownerBrain {
 	public void move(Action action) {
 
 		// On calcule la position suivante par rapport � la position actuelle
-		LawnMownerPosition newPosition = new LawnMownerPosition(currentPosition);
+		LawnMowerPosition newPosition = new LawnMowerPosition(currentPosition);
 		ActionHandler actionHandler = ActionFactory.getInstance(action);
 		actionHandler.execute(newPosition);
 
@@ -29,7 +29,7 @@ public class LawnMownerBrain {
 
 	}
 
-	public LawnMownerPosition getCurrentPosition() {
+	public LawnMowerPosition getCurrentPosition() {
 		return currentPosition;
 	}
 

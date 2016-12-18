@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-public class Position {
+public class Coordinates {
 
 	private Integer x;
 	private Integer y;

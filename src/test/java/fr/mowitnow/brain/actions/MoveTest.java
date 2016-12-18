@@ -9,19 +9,19 @@ import fr.mowitnow.brain.actions.ActionHandler;
 import fr.mowitnow.brain.actions.Forward;
 import fr.mowitnow.brain.actions.TurnLeft;
 import fr.mowitnow.brain.actions.TurnRight;
-import fr.mowitnow.model.LawnMownerPosition;
+import fr.mowitnow.model.LawnMowerPosition;
 import fr.mowitnow.model.Orientation;
 
 public class MoveTest {
 
-	private LawnMownerPosition position;
+	private LawnMowerPosition position;
 	private ActionHandler leftHandler;
 	private ActionHandler rightHandler;
 	private ActionHandler forwardHandler;
 
 	@Before
 	public void setUp() {
-		position = new LawnMownerPosition();
+		position = new LawnMowerPosition();
 
 		leftHandler = new TurnLeft();
 		rightHandler = new TurnRight();

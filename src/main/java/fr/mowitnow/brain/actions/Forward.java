@@ -1,11 +1,11 @@
 package fr.mowitnow.brain.actions;
 
-import fr.mowitnow.model.LawnMownerPosition;
+import fr.mowitnow.model.LawnMowerPosition;
 
 
 public class Forward implements ActionHandler {
 
-    public void execute(LawnMownerPosition position) {
+    public void execute(LawnMowerPosition position) {
 
         switch (position.getOrientation()) {
             case N:

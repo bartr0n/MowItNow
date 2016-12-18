@@ -1,9 +1,9 @@
 package fr.mowitnow.brain.actions;
 
-import fr.mowitnow.model.LawnMownerPosition;
+import fr.mowitnow.model.LawnMowerPosition;
 
 public interface ActionHandler {
 
-    void execute(LawnMownerPosition position);
+    void execute(LawnMowerPosition position);
 
 }

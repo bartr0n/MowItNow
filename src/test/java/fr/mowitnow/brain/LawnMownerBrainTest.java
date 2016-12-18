@@ -8,20 +8,20 @@ import org.junit.Test;
 
 import fr.mowitnow.model.Action;
 import fr.mowitnow.model.Lawn;
-import fr.mowitnow.model.LawnMownerBrain;
-import fr.mowitnow.model.LawnMownerPosition;
+import fr.mowitnow.model.LawnMowerBrain;
+import fr.mowitnow.model.LawnMowerPosition;
 import fr.mowitnow.model.Orientation;
-import fr.mowitnow.model.Position;
+import fr.mowitnow.model.Coordinates;
 
 public class LawnMownerBrainTest {
 
-	private LawnMownerBrain brain;
+	private LawnMowerBrain brain;
 
 	@Before
 	public void setUp() {
-		brain = new LawnMownerBrain();
+		brain = new LawnMowerBrain();
 		brain.setLawn(new Lawn(3, 3));
-		brain.setCurrentPosition(new LawnMownerPosition());
+		brain.setCurrentPosition(new LawnMowerPosition());
 	}
 
 	@Test
@@ -29,7 +29,7 @@ public class LawnMownerBrainTest {
 
 		executeInstructions("AAAA");
 
-		LawnMownerPosition finalPosition = brain.getCurrentPosition();
+		LawnMowerPosition finalPosition = brain.getCurrentPosition();
 		assertEquals("Wrong direction", Orientation.N, finalPosition.getOrientation());
 		assertEquals("Wrong X position", Integer.valueOf(0), finalPosition.getPosition().getX());
 		assertEquals("Wrong Y position", Integer.valueOf(3), finalPosition.getPosition().getY());
@@ -40,7 +40,7 @@ public class LawnMownerBrainTest {
 
 		executeInstructions("AAAAAA");
 
-		LawnMownerPosition finalPosition = brain.getCurrentPosition();
+		LawnMowerPosition finalPosition = brain.getCurrentPosition();
 		assertEquals("Wrong direction", Orientation.N, finalPosition.getOrientation());
 		assertEquals("Wrong X position", Integer.valueOf(0), finalPosition.getPosition().getX());
 		assertEquals("Wrong Y position", Integer.valueOf(3), finalPosition.getPosition().getY());
@@ -51,7 +51,7 @@ public class LawnMownerBrainTest {
 
 		executeInstructions("GA");
 
-		LawnMownerPosition finalPosition = brain.getCurrentPosition();
+		LawnMowerPosition finalPosition = brain.getCurrentPosition();
 		assertEquals("Wrong direction", Orientation.W, finalPosition.getOrientation());
 		assertEquals("Wrong X position", Integer.valueOf(0), finalPosition.getPosition().getX());
 		assertEquals("Wrong Y position", Integer.valueOf(0), finalPosition.getPosition().getY());
@@ -62,7 +62,7 @@ public class LawnMownerBrainTest {
 
 		executeInstructions("GAD");
 
-		LawnMownerPosition finalPosition = brain.getCurrentPosition();
+		LawnMowerPosition finalPosition = brain.getCurrentPosition();
 		assertEquals("Wrong direction", Orientation.N, finalPosition.getOrientation());
 		assertEquals("Wrong X position", Integer.valueOf(0), finalPosition.getPosition().getX());
 		assertEquals("Wrong Y position", Integer.valueOf(0), finalPosition.getPosition().getY());

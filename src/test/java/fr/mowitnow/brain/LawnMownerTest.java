@@ -8,10 +8,10 @@ import org.junit.Test;
 
 import fr.mowitnow.model.Lawn;
 import fr.mowitnow.model.LawnMower;
-import fr.mowitnow.model.LawnMownerBrain;
-import fr.mowitnow.model.LawnMownerPosition;
+import fr.mowitnow.model.LawnMowerBrain;
+import fr.mowitnow.model.LawnMowerPosition;
 import fr.mowitnow.model.Orientation;
-import fr.mowitnow.model.Position;
+import fr.mowitnow.model.Coordinates;
 
 public class LawnMownerTest {
 
@@ -19,7 +19,7 @@ public class LawnMownerTest {
 
 	@Before
 	public void setUp() {
-		LawnMownerBrain brain = new LawnMownerBrain();
+		LawnMowerBrain brain = new LawnMowerBrain();
 		brain.setLawn(new Lawn(5, 5));
 
 		lawnMowner = new LawnMower(brain);
@@ -28,8 +28,8 @@ public class LawnMownerTest {
 	@Test
 	public void lawnMownerTest1() {
 
-		lawnMowner.init(new LawnMownerPosition(new Position(1, 2), Orientation.N));
-		LawnMownerPosition finalPosition = lawnMowner.execute("GAGAGAGAA");
+		lawnMowner.init(new LawnMowerPosition(new Coordinates(1, 2), Orientation.N));
+		LawnMowerPosition finalPosition = lawnMowner.execute("GAGAGAGAA");
 
 		assertNotNull("finalPosition is null", finalPosition);
 		assertEquals("Wrong orientation", Orientation.N, finalPosition.getOrientation());
@@ -40,8 +40,8 @@ public class LawnMownerTest {
 	@Test
 	public void lawnMownerTest2() {
 
-		lawnMowner.init(new LawnMownerPosition(new Position(3, 3), Orientation.E));
-		LawnMownerPosition finalPosition = lawnMowner.execute("AADAADADDA");
+		lawnMowner.init(new LawnMowerPosition(new Coordinates(3, 3), Orientation.E));
+		LawnMowerPosition finalPosition = lawnMowner.execute("AADAADADDA");
 
 		assertNotNull("finalPosition is null", finalPosition);
 		assertEquals("Wrong orientation", Orientation.E, finalPosition.getOrientation());
