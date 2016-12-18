@@ -5,10 +5,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import fr.mowitnow.brain.actions.ActionHandler;
-import fr.mowitnow.brain.actions.Forward;
-import fr.mowitnow.brain.actions.TurnLeft;
-import fr.mowitnow.brain.actions.TurnRight;
 import fr.mowitnow.model.LawnMowerPosition;
 import fr.mowitnow.model.Orientation;
 
@@ -76,32 +72,32 @@ public class MoveTest {
 		forwardHandler.execute(position);
 		assertEquals("Orientation changed", Orientation.N, position.getOrientation());
 
-		assertEquals("Wrong X position", Integer.valueOf(0), position.getPosition().getX());
-		assertEquals("Wrong Y position", Integer.valueOf(1), position.getPosition().getY());
+		assertEquals("Wrong X position", Integer.valueOf(0), position.getCoordinates().getX());
+		assertEquals("Wrong Y position", Integer.valueOf(1), position.getCoordinates().getY());
 
 		rightHandler.execute(position);
 
 		forwardHandler.execute(position);
 		assertEquals("Invalid orientation", Orientation.E, position.getOrientation());
 
-		assertEquals("Wrong X position", Integer.valueOf(1), position.getPosition().getX());
-		assertEquals("Wrong Y position", Integer.valueOf(1), position.getPosition().getY());
+		assertEquals("Wrong X position", Integer.valueOf(1), position.getCoordinates().getX());
+		assertEquals("Wrong Y position", Integer.valueOf(1), position.getCoordinates().getY());
 
 		rightHandler.execute(position);
 
 		forwardHandler.execute(position);
 		assertEquals("Invalid orientation", Orientation.S, position.getOrientation());
 
-		assertEquals("Wrong X position", Integer.valueOf(1), position.getPosition().getX());
-		assertEquals("Wrong Y position", Integer.valueOf(0), position.getPosition().getY());
+		assertEquals("Wrong X position", Integer.valueOf(1), position.getCoordinates().getX());
+		assertEquals("Wrong Y position", Integer.valueOf(0), position.getCoordinates().getY());
 
 		rightHandler.execute(position);
 
 		forwardHandler.execute(position);
 		assertEquals("Invalid orientation", Orientation.W, position.getOrientation());
 
-		assertEquals("Wrong X position", Integer.valueOf(0), position.getPosition().getX());
-		assertEquals("Wrong Y position", Integer.valueOf(0), position.getPosition().getY());
+		assertEquals("Wrong X position", Integer.valueOf(0), position.getCoordinates().getX());
+		assertEquals("Wrong Y position", Integer.valueOf(0), position.getCoordinates().getY());
 	}
 
 }

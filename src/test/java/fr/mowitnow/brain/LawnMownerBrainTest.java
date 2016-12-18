@@ -11,7 +11,6 @@ import fr.mowitnow.model.Lawn;
 import fr.mowitnow.model.LawnMowerBrain;
 import fr.mowitnow.model.LawnMowerPosition;
 import fr.mowitnow.model.Orientation;
-import fr.mowitnow.model.Coordinates;
 
 public class LawnMownerBrainTest {
 
@@ -31,8 +30,8 @@ public class LawnMownerBrainTest {
 
 		LawnMowerPosition finalPosition = brain.getCurrentPosition();
 		assertEquals("Wrong direction", Orientation.N, finalPosition.getOrientation());
-		assertEquals("Wrong X position", Integer.valueOf(0), finalPosition.getPosition().getX());
-		assertEquals("Wrong Y position", Integer.valueOf(3), finalPosition.getPosition().getY());
+		assertEquals("Wrong X position", Integer.valueOf(0), finalPosition.getCoordinates().getX());
+		assertEquals("Wrong Y position", Integer.valueOf(3), finalPosition.getCoordinates().getY());
 	}
 
 	@Test
@@ -42,8 +41,8 @@ public class LawnMownerBrainTest {
 
 		LawnMowerPosition finalPosition = brain.getCurrentPosition();
 		assertEquals("Wrong direction", Orientation.N, finalPosition.getOrientation());
-		assertEquals("Wrong X position", Integer.valueOf(0), finalPosition.getPosition().getX());
-		assertEquals("Wrong Y position", Integer.valueOf(3), finalPosition.getPosition().getY());
+		assertEquals("Wrong X position", Integer.valueOf(0), finalPosition.getCoordinates().getX());
+		assertEquals("Wrong Y position", Integer.valueOf(3), finalPosition.getCoordinates().getY());
 	}
 
 	@Test
@@ -53,8 +52,8 @@ public class LawnMownerBrainTest {
 
 		LawnMowerPosition finalPosition = brain.getCurrentPosition();
 		assertEquals("Wrong direction", Orientation.W, finalPosition.getOrientation());
-		assertEquals("Wrong X position", Integer.valueOf(0), finalPosition.getPosition().getX());
-		assertEquals("Wrong Y position", Integer.valueOf(0), finalPosition.getPosition().getY());
+		assertEquals("Wrong X position", Integer.valueOf(0), finalPosition.getCoordinates().getX());
+		assertEquals("Wrong Y position", Integer.valueOf(0), finalPosition.getCoordinates().getY());
 	}
 
 	@Test
@@ -64,8 +63,8 @@ public class LawnMownerBrainTest {
 
 		LawnMowerPosition finalPosition = brain.getCurrentPosition();
 		assertEquals("Wrong direction", Orientation.N, finalPosition.getOrientation());
-		assertEquals("Wrong X position", Integer.valueOf(0), finalPosition.getPosition().getX());
-		assertEquals("Wrong Y position", Integer.valueOf(0), finalPosition.getPosition().getY());
+		assertEquals("Wrong X position", Integer.valueOf(0), finalPosition.getCoordinates().getX());
+		assertEquals("Wrong Y position", Integer.valueOf(0), finalPosition.getCoordinates().getY());
 	}
 
 	@Test(expected = IllegalArgumentException.class)

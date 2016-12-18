@@ -23,7 +23,7 @@ public class LawnMowerBrain {
 
 		// On valide si la position est dans les limites de la pelouse. Si c'est
 		// le cas, on ne bouge pas
-		if (!lawn.isOutOfBoundaries(newPosition.getPosition())) {
+		if (!lawn.isOutOfBoundaries(newPosition.getCoordinates())) {
 			currentPosition = newPosition;
 		}
 

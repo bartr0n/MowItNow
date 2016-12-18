@@ -9,22 +9,22 @@ import lombok.Setter;
 @AllArgsConstructor
 public class LawnMowerPosition {
 
-	private Coordinates position;
+	private Coordinates coordinates;
 	private Orientation orientation;
 
 	public LawnMowerPosition() {
-		this.position = new Coordinates(0, 0);
+		this.coordinates = new Coordinates(0, 0);
 		this.orientation = Orientation.N;
 	}
 
 	public LawnMowerPosition(LawnMowerPosition source) {
 
-		this.position = new Coordinates(source.getPosition().getX(), source.getPosition().getY());
+		this.coordinates = new Coordinates(source.getCoordinates().getX(), source.getCoordinates().getY());
 		this.orientation = source.orientation;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("%d, %d, %s", this.position.getX(), this.position.getY(), orientation);
+		return String.format("%d, %d, %s", this.coordinates.getX(), this.coordinates.getY(), orientation);
 	}
 }
