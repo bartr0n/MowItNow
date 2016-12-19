@@ -1,5 +1,7 @@
 package fr.mowitnow;
 
+import static org.junit.Assert.fail;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,6 +21,12 @@ public class MainTest {
 
 	@Test
 	public void testValidFile() {
-		fileHandler.handleInputFile("src/test/resources/inputFile1.txt");
+		fileHandler.handleInputFile("src/test/resources/testFiles/inputFile1.txt");
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testInvalidFile() {
+		fileHandler.handleInputFile("src/test/resources/testFiles/inputFile2.txt");
+		fail("No exception thrown!");
 	}
 }

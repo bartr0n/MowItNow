@@ -1,7 +1,5 @@
 package fr.mowitnow.model;
 
-import javax.validation.constraints.Min;
-
 import com.google.common.collect.Range;
 
 public class Lawn {
@@ -11,7 +9,11 @@ public class Lawn {
 	private Range<Integer> xRange;
 	private Range<Integer> yRange;
 
-	public Lawn(@Min(0) Integer x, @Min(0) Integer y) {
+	public Lawn(Integer x, Integer y) {
+		if (x < ORIGIN || y < ORIGIN) {
+			throw new IllegalArgumentException(String.format("X and Y coordinates must be greater than %d", ORIGIN));
+		}
+
 		xRange = Range.closed(ORIGIN, x);
 		yRange = Range.closed(ORIGIN, y);
 	}
